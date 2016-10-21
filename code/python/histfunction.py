@@ -3,9 +3,13 @@
 import ROOT
 
 
-def hist(rootfile,tree, var,name,rootname,title="default" ,  xtitle="default",ytitle="default", linecolor= "default", fillcolor="default"):
+def hist(rootfile,tree, var,name,rootname, Dir="default" ,title="default" ,  xtitle="default",ytitle="default", linecolor= "default", fillcolor="default"):
 	f=ROOT.TFile(rootfile)
-	t=f.Get(tree)
+	if Dir!="default":
+		Directory=f.GetDirectory(Dir)
+		t=Directory.Get(tree)
+ 	else:
+		t=f.Get(tree)
 	t.Draw(var +">>temph")
 	h=ROOT.gDirectory.Get("temph")
 
