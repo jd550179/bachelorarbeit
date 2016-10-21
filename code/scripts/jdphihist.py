@@ -17,9 +17,9 @@ Filename="/net/scratch_cms/institut_3b/tmuller/artus/2016-10-15_13-04_Run2CPStud
 #Directory=File.GetDirectory("tt_jecUncNom_tauEsNom;1")
 tree="ntuple;1"
 
-hist(Filename,tree,"jdphi","dphi",RF,Dir="tt_jecUncNom_tauEsNom;1")
-hist(Filename,tree,"m_vis","m_vis",RF,Dir="tt_jecUncNom_tauEsNom;1")
-hist(Filename,tree,"jdeta","jdeta",RF,Dir="tt_jecUncNom_tauEsNom;1")
+dphi=hist(Filename,tree,"jdphi","dphi",RF,Dir="tt_jecUncNom_tauEsNom;1")
+m_vis=hist(Filename,tree,"m_vis","m_vis",RF,Dir="tt_jecUncNom_tauEsNom;1")
+deta=hist(Filename,tree,"jdeta","jdeta",RF,Dir="tt_jecUncNom_tauEsNom;1")
 
 
 
