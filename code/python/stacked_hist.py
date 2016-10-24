@@ -2,19 +2,27 @@
 
 import ROOT
 
-from bachelorarbeit.code.histfunction import hist
+#from bachelorarbeit.code.histfunction import hist
 
 f=ROOT.TFile("deltaphi.root")
 
-def stackedhist(ROOTfile, undergroundlist,signallist="default"):
+def stackedhist(ROOTfile, rootname,name, undergroundlist,signallist="default"):
 	f=ROOT.TFile(ROOTfile)
-	undergrounddata=[]	
+	#undergrounddata=[]	
 	stack=ROOT.THStack(ROOTfile,"")
 	
 	n=len(undergroundlist)
 	for i in range(n):
 		
-		undergrounddata.append(f.Get(undergroundlist[i])		
-	
-		stack.add(undergrounddata[i])	
+		undergrounddata=f.Get(undergroundlist[i])	
+		
+		undergrounddata.Print()
+		stack.Add(undergrounddata)	
+		stack.Draw()
+
+	g=ROOT.TFile(rootname,"update")
+	stack.Write(name)
+	g.Write()
+	g.Close()
+	return stack
 	

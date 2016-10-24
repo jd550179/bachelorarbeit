@@ -1,17 +1,26 @@
 # -*- coding: utf-8 -*-
 
+
 import ROOT
+from Artus.HarryPlotter.utility.roottools import RootTools
 
-
-def hist(rootfile,tree, var,name,rootname, Dir="default" ,title="default" ,  xtitle="default",ytitle="default", linecolor= "default", fillcolor="default"):
+def hist(rootfile,tree, var,name,rootname,bins,xmin,xmax,path,Dir="default" ,title="default" ,  xtitle="default",ytitle="default", linecolor= "default", fillcolor="default",cuts="default"):
 	f=ROOT.TFile(rootfile)
+	t=f.Get(tree)
 	if Dir!="default":
 		Directory=f.GetDirectory(Dir)
 		t=Directory.Get(tree)
- 	else:
+	else:
 		t=f.Get(tree)
-	t.Draw(var +">>temph")
-	h=ROOT.gDirectory.Get("temph")
+	
+	h=ROOT.TH1F("temph",name,bins,xmin,xmax)
+	if cuts!="default":
+		t.Project("temph",var,cuts)
+	else:	
+		t.Project("temph",var )
+	
+
+	
 
 	if title!='default':
 		h.SetTitle(title)
@@ -28,8 +37,7 @@ def hist(rootfile,tree, var,name,rootname, Dir="default" ,title="default" ,  xti
 
 	
 	g=ROOT.TFile(rootname,"update")
-	h.Write(name)
-	g.Write()
+	RootTools.write_object(g,h,path)
 	g.Close()
 	return h
 
