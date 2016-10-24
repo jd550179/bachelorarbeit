@@ -9,7 +9,7 @@ from Artus.HarryPlotter.utility.roottools import RootTools
 
 def stackedhist(ROOTfile, rootname,path, undergroundlist,signallist="default"):
 	f=ROOT.TFile(ROOTfile)
-		
+	c=ROOT.TCanvas()	
 	stack=ROOT.THStack(ROOTfile,"")
 	
 	n=len(undergroundlist)
@@ -21,10 +21,12 @@ def stackedhist(ROOTfile, rootname,path, undergroundlist,signallist="default"):
 		for i in j:
 			signal=f.Get(signallist[j])
 			stack.Add(signal)
-	stack.Draw()
 
+	
+	stack.Draw()
+	
 	g=ROOT.TFile(rootname,"update")
 	RootTools.write_object(g,stack,path)
 	g.Close()
-	return stack
+	return c.SaveAs("data.png")
 	

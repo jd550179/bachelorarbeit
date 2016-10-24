@@ -12,7 +12,11 @@ g=ROOT.TFile(RF,"recreate")
 g.Close()
 
 
+
 ROOTfile="deltaphi.root"
 List=["test2/data","test2/data2"]
 
-stackedhist(ROOTfile,RF,"phistacked",List)
+print stackedhist(ROOTfile,RF,"phistacked",List)
+
+
+
