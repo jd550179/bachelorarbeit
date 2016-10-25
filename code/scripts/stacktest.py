@@ -15,8 +15,9 @@ g.Close()
 
 ROOTfile="deltaphi.root"
 List=["test2/data","test2/data2"]
+LegendList=["m1","m2"]
 
-print stackedhist(ROOTfile,RF,"phistacked",List)
+print stackedhist(ROOTfile,RF,"phistacked",List,LegendList,List,LegendList,title="mass_stacked",xtitle="mass(GeV)")
 
 
 
