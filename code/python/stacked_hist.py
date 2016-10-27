@@ -4,14 +4,14 @@ import ROOT
 
 #from bachelorarbeit.code.histfunction import hist
 
-f=ROOT.TFile("deltaphi.root")
+
 from Artus.HarryPlotter.utility.roottools import RootTools
 
 def stackedhist(ROOTfile, rootname,path, undergroundlist,undergroundlegendlist,signallist="default",signallegendlist="default",data="default",datalegend="default",title="default",xtitle="default",ytitle="default",savename="default",maximum="default",minimum="default"):
 	f=ROOT.TFile(ROOTfile)
 	c=ROOT.TCanvas()	
 	stack=ROOT.THStack(ROOTfile,"")
-	legend=ROOT.TLegend(0.85,0.8,0.95,0.95)
+	legend=ROOT.TLegend(0.8,0.7,0.9,0.9)
 
 	n=len(undergroundlist)
 	for i in range(n):
