@@ -11,7 +11,7 @@ def stackedhist(ROOTfile, rootname,path, undergroundlist,undergroundlegendlist,s
 	f=ROOT.TFile(ROOTfile)
 	c=ROOT.TCanvas()	
 	stack=ROOT.THStack(ROOTfile,"")
-	legend=ROOT.TLegend(0.8,0.7,0.9,0.9)
+	legend=ROOT.TLegend(0.9,0.7,1.0,0.9)
 
 	n=len(undergroundlist)
 	for i in range(n):
