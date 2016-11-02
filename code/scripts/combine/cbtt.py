@@ -21,15 +21,15 @@ cb = ch.CombineHarvester()
 
 
 
-cb.AddObservations(["*"],["htt"],["13TeV"],["mt"],[(0,"dphi")])
+cb.AddObservations(["*"],["htt"],["13TeV"],["tt"],[(0,"dphi")])
 
 bkg_procs=["ZTT","ZLL","WJ","TTJ","QCD","qqH125","WH125","ZH125"]
 
-cb.AddProcesses(["*"],["htt"],["13TeV"],["mt"],bkg_procs,[(0,"dphi")], False)
+cb.AddProcesses(["*"],["htt"],["13TeV"],["tt"],bkg_procs,[(0,"dphi")], False)
 
 signal_procs=["ggH125_000"]
 
-cb.AddProcesses(["125"],["htt"],["13TeV"],["mt"],signal_procs,[(0,"dphi")], True)
+cb.AddProcesses(["125"],["htt"],["13TeV"],["tt"],signal_procs,[(0,"dphi")], True)
 
 
 
@@ -38,14 +38,14 @@ cb.cp().signals().AddSyst(cb, "lumi_$ERA", "lnN",ch.SystMap("era") (["13TeV"], 1
 
 
 
-cb.cp().backgrounds().ExtractShapes(auxshapes+"/dphi_2016.root","$BIN/$PROCESS","$BIN/$PROCESS$MASS_$SYSTEMATIC")
+cb.cp().backgrounds().ExtractShapes(auxshapes+"/dphitt_2016.root","$BIN/$PROCESS","$BIN/$PROCESS$MASS_$SYSTEMATIC")
 
-cb.cp().signals().ExtractShapes(auxshapes+"/dphi_2016.root","$BIN/$PROCESS","$BIN/$PROCESS$MASS_$SYSTEMATIC")
+cb.cp().signals().ExtractShapes(auxshapes+"/dphitt_2016.root","$BIN/$PROCESS","$BIN/$PROCESS$MASS_$SYSTEMATIC")
 
-g=ROOT.TFile("htt_mt.input.root","recreate")
+g=ROOT.TFile("htt_tt.input.root","recreate")
 g.Close()
 
-cb.WriteDatacard("card.txt", "htt_mt.input.root")
+cb.WriteDatacard("cardtt.txt", "htt_tt.input.root")
 
 
 print cb.PrintAll()
