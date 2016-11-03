@@ -7,7 +7,6 @@ from Artus.HarryPlotter.utility.roottools import RootTools
 def hist(rootfile,tree, var,name,rootname,bins,xmin,xmax,path,Drawoption,Dir="default" ,title="default" ,  xtitle="default",ytitle="default", linecolor= "default", fillcolor="default",cuts="default"):
 	
 	t = ROOT.TChain("tree", "tree")
-
 	if isinstance(rootfile, basestring)==True:
 		t.Add(rootfile+"/"+(Dir+"/" if Dir!="default" else "")+tree)
 	if isinstance(rootfile, basestring)==False:

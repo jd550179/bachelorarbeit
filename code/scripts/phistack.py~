@@ -90,7 +90,7 @@ LegendList=["QCD","W+Jets","tt+jets","Di-boson","Z->tautau","Z->ll"]
 Data="dphi/data_obs_errorbar"
 Datalegend="SM-Data"
 
-stackedhist(RF,RF2,"phistacked",List,LegendList,data=Data,datalegend=Datalegend,title="phi_stacked",xtitle="delta_phi", maximum=700,savename="dphi_2015.png")
+stackedhist(RF,RF2,"phistacked",List,LegendList,data=Data,datalegend=Datalegend,title="phi_stacked",xtitle="delta_phi", maximum=800,savename="dphi_2015.png")
 
 
 

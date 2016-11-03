@@ -23,7 +23,7 @@ cb = ch.CombineHarvester()
 
 cb.AddObservations(["*"],["htt"],["13TeV"],["tt"],[(0,"dphi")])
 
-bkg_procs=["ZTT","ZLL","WJ","TTJ","VV","QCD","qqH","WH","ZH"]
+bkg_procs=["ZTT","ZLL","WJ","TTJ","VV","QCD","qqH125","WH125","ZH125"]
 
 cb.AddProcesses(["*"],["htt"],["13TeV"],["tt"],bkg_procs,[(0,"dphi")], False)
 
@@ -33,7 +33,7 @@ cb.AddProcesses(["125"],["htt"],["13TeV"],["tt"],signal_procs,[(0,"dphi")], True
 
 
 
-cb.cp().process(["ZTT","ZLL","WJ","TTJ","VV","qqH","WH","ZH"]).AddSyst(cb, "lumi_$ERA", "lnN",ch.SystMap("era") (["13TeV"], 1.027))
+cb.cp().process(["ZTT","ZLL","WJ","TTJ","VV","qqH125","WH125","ZH125"]).AddSyst(cb, "lumi_$ERA", "lnN",ch.SystMap("era") (["13TeV"], 1.027))
 cb.cp().signals().AddSyst(cb, "lumi_$ERA", "lnN",ch.SystMap("era") (["13TeV"], 1.027))
 
 

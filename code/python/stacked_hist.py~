@@ -8,8 +8,8 @@ import ROOT
 from Artus.HarryPlotter.utility.roottools import RootTools
 
 
-Colors={"QCD":820,"WJ":892,"TTJ":592,"ZTT":797,"ZLL":860,"qqH":1,"WH":7,"ZH":8,"VV":432}
-histnames={"QCD":"QCD","WJ":"W+Jets","TTJ":"tt+jets","ZTT":"Z->tautau","ZLL":"Z->ll","qqH":"qqH","WH":"WH","ZH":"ZH","VV":"Diboson"}
+Colors={"QCD":820,"WJ":892,"TTJ":592,"ZTT":797,"ZLL":860,"qqH125":1,"WH125":7,"ZH125":8,"VV":432}
+histnames={"QCD":"QCD","WJ":"W+Jets","TTJ":"tt+jets","ZTT":"Z->tautau","ZLL":"Z->ll","qqH125":"qqH","WH125":"WH","ZH125":"ZH","VV":"Diboson"}
 
 
 def stackedhist(ROOTfile, rootname,path, undergroundlist,Directory,signallist="default",signallegendlist="default",data="default",datalegend="default",title="default",xtitle="default",ytitle="default",savename="default",maximum="default",minimum="default"):

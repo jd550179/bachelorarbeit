@@ -15,7 +15,7 @@ g=ROOT.TFile(RF2,"recreate")
 g.Close()
 
 
-List=["QCD","WJ","TTJ","ZTT","VV","ZLL","qqH","WH","ZH"]
+List=["QCD","WJ","TTJ","ZTT","VV","ZLL","qqH125","WH125","ZH125"]
 LegendList=["QCD","W+Jets","tt+jets","Z->tautau","Z->ll","qqH","WH","ZH"]
 
 Signallistsm=["dphi_postfit/TotalSig"]
