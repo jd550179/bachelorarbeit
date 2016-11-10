@@ -1,0 +1,11 @@
+*~
+*.pyc
+work.*
+*__init__.py
+*.formatted
+auxiliaries
+data/ArtusOutputs/recent
+data/ArtusOutputs
+python/uncertainties/
+wiki
+*.pcm
